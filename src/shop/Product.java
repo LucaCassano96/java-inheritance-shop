@@ -3,6 +3,7 @@ package shop;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Product {
 
@@ -84,6 +85,23 @@ public class Product {
 
  public String fullName(){
   return code + "-" + name;
+ }
+
+
+ // metodo createProduct comune a tutti i prodotti
+
+ public static Product createProduct(Scanner scanner) {
+  System.out.print("Name: ");
+  String name = scanner.nextLine();
+  System.out.print("Description: ");
+  String description = scanner.nextLine();
+  System.out.print("Price: ");
+  BigDecimal price = new BigDecimal(scanner.nextLine());
+  System.out.print("Vat: ");
+  BigDecimal vat = new BigDecimal(scanner.nextLine());
+
+  // Restituisci un oggetto Product con gli attributi inseriti
+  return new Product(name, description, price, vat);
  }
 
  // metodo ToString

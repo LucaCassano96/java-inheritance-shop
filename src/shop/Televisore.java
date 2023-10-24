@@ -8,11 +8,11 @@ public class Televisore extends Product{
 
     //ATTRIBUTI TELEVISORE
     private int dimention;
-    private String smart;
+    private boolean smart;
 
 
     //COSTRUTTORE TELEVISORE
-    public Televisore(String name, String description, BigDecimal price, BigDecimal vat, int dimention, String smart) {
+    public Televisore(String name, String description, BigDecimal price, BigDecimal vat, int dimention, boolean smart) {
         super(name, description, price, vat);
         this.dimention = dimention;
         this.smart = smart;
@@ -25,7 +25,7 @@ public class Televisore extends Product{
         return dimention;
     }
 
-    public String getSmart() {
+    public boolean getSmart() {
         return smart;
     }
 
@@ -33,7 +33,20 @@ public class Televisore extends Product{
         this.dimention = dimention;
     }
 
-    public void setSmart(String smart) {
+    public void setSmart(boolean smart) {
         this.smart = smart;
+    }
+
+    @Override
+    public String toString() {
+        return "Televisore{" +
+                "code=" + getCode() +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", price=" + getPrice() +
+                ", vat=" + getVat() +
+                ",dimention=" + dimention +
+                ", smart=" + smart +
+                '}';
     }
 }

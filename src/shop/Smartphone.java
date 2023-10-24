@@ -37,4 +37,17 @@ public class Smartphone extends Product {
     public void setStorage(int storage) {
         this.storage = storage;
     }
+
+    @Override
+    public String toString() {
+        return "Smartphone{"  +
+                "code=" + getCode() +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", price=" + getPrice() +
+                ", vat=" + getVat() +
+                ", smartphoneCode=" + smartphoneCode +
+                ", storage=" + storage +
+                '}';
+    }
 }

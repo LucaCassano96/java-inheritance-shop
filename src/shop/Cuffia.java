@@ -7,16 +7,15 @@ public class Cuffia extends Product{
 
     //ATTRIBUTI CUFFIE
     private String color;
-    private String wireless;
-    private String wired;
+    private boolean wireless;
+
 
     //COSTRUTTORE CUFFIE
-    public Cuffia(String name, String description, BigDecimal price, BigDecimal vat, String color, String wireless, String wired) {
+    public Cuffia(String name, String description, BigDecimal price, BigDecimal vat, String color, boolean wireless) {
         super(name, description, price, vat);
 
         this.color = color;
         this.wireless = wireless;
-        this.wired = wired;
     }
 
     //METODI CUFFIE
@@ -25,23 +24,29 @@ public class Cuffia extends Product{
         return color;
     }
 
-    public String getWireless() {
+    public boolean getWireless() {
         return wireless;
     }
 
-    public String getWired() {
-        return wired;
-    }
 
     public void setColor(String color) {
         this.color = color;
     }
 
-    public void setWireless(String wireless) {
+    public void setWireless(boolean wireless) {
         this.wireless = wireless;
     }
 
-    public void setWired(String wired) {
-        this.wired = wired;
+    @Override
+    public String toString() {
+        return "Cuffia{" +
+                "code=" + getCode() +
+                ", name='" + getName() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", price=" + getPrice() +
+                ", vat=" + getVat() +
+                "color='" + color + '\'' +
+                ", wireless=" + wireless +
+                '}';
     }
 }
